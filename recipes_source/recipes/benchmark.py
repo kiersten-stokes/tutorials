@@ -25,9 +25,9 @@ Setup
 -----
 Before we begin, install ``torch`` if it isn’t already available.
 
-::
+.. code::
 
-   pip install torch
+   !pip install torch
 
 """
 
@@ -101,8 +101,7 @@ print(f'mul_sum(x, x):  {t0.timeit(100) / 100 * 1e6:>5.1f} us')
 print(f'bmm(x, x):      {t1.timeit(100) / 100 * 1e6:>5.1f} us')
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     mul_sum(x, x):  111.6 us
 #     bmm(x, x):       70.0 us
@@ -135,8 +134,7 @@ print(t0.timeit(100))
 print(t1.timeit(100))
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     <torch.utils.benchmark.utils.common.Measurement object at 0x7fb10400d0f0>
 #     batched_dot_mul_sum(x, x)
@@ -190,8 +188,7 @@ print(t0.timeit(100))
 print(t1.timeit(100))
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     Benchmarking on 40 threads
 #     <torch.utils.benchmark.utils.common.Measurement object at 0x7fb103d54080>
@@ -234,8 +231,7 @@ print(f'bmm(x, x):      {t1.timeit(100) / 100 * 1e6:>5.1f} us')
 print(f'bmm(x, x):      {t1.timeit(100) / 100 * 1e6:>5.1f} us')
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     mul_sum(x, x):   27.6 us
 #     mul_sum(x, x):   25.3 us
@@ -258,8 +254,7 @@ print(t0.timeit(100))
 print(t1.timeit(100))
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     <torch.utils.benchmark.utils.common.Measurement object at 0x7fb10400d080>
 #     batched_dot_mul_sum(x, x)
@@ -311,8 +306,7 @@ print(m0)
 print(m1)
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     <torch.utils.benchmark.utils.common.Measurement object at 0x7fb10400d0f0>
 #     batched_dot_mul_sum(x, x)
@@ -334,8 +328,7 @@ print(f"Mean:   {m0.mean * 1e6:6.2f} us")
 print(f"Median: {m0.median * 1e6:6.2f} us")
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     Mean:   231.79 us
 #     Median: 231.79 us
@@ -391,8 +384,7 @@ compare = benchmark.Compare(results)
 compare.print()
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     [--------------- Batched dot ----------------]
 #                           |  mul/sum   |    bmm   
@@ -523,8 +515,7 @@ compare.colorize()
 compare.print()
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     [------------------------------------- Batched dot -------------------------------------]
 #                                                    |  [1, 1]  |  [1024, 10000]  |  [10000, 1]
@@ -594,8 +585,7 @@ compare.trim_significant_figures()
 compare.print()
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     [--------------------- Batched dot ---------------------]
 #                                          |  mul/sum  |   bmm 
@@ -650,8 +640,7 @@ compare.colorize(rowwise=True)
 compare.print()
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     [----------------------- Batched dot ------------------------]
 #                                              |  mul/sum  |   bmm  
@@ -772,8 +761,7 @@ pretty_print(t0.blocked_autorange())
 pretty_print(t1.blocked_autorange())
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     <torch.utils.benchmark.utils.common.Measurement object at 0x7fb16935d2e8>
 #     batched_dot_mul_sum(x, x)
@@ -841,8 +829,7 @@ torch.set_printoptions(linewidth=160)
 print(delta)
 
 ######################################################################
-# .. code-block:: none
-#    :caption: Output
+# .. code:: none
 #
 #     <torch.utils.benchmark.utils.valgrind_wrapper.timer_interface.CallgrindStats object at 0x7fb0f06e7630>
 #     cpp_lib.batched_dot_mul_sum_v0(x, x)
